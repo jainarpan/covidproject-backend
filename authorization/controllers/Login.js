@@ -16,7 +16,7 @@ const login=async (req,res)=>{
         if(valid)
         {//header payload signature 
             const token = jwt.sign({_id:user._id},process.env.TOKEN_SECRET);
-            return res.status(200).json({authtoken:token,profile:user});
+            return res.status(200).json({authToken:token,profile:user});
         }
         else
         {
