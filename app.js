@@ -8,12 +8,6 @@ const AuthRouter=require("./authorization/Routes");
 app.use(bodyparser.urlencoded({extended:true}))//
 
 mongoose.connect("mongodb+srv://arpanjain:"+process.env.CLUSTER_PASSWORD+ "@cluster0.zezkw.mongodb.net/mernstack?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true })
- app.use(
-    cors({
-      origin: process.env.SITE_URL,
-      optionsSuccessStatus: 200,
-    })
-  );
   app.use(express.json());
   app.use(bodyparser.json());//
   app.get("/",function(req,res){
